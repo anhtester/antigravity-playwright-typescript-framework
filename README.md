@@ -94,6 +94,16 @@ The framework is fully integrated with GitHub Actions (configured in `.github/wo
 3. Select the **gh-pages** branch (and `/ (root)` folder) and click **Save**.
 4. GitHub will deploy and provide you with a public URL to view the live interactive reports.
 
+### How to configure Environment Variables on GitHub:
+To configure the environment variables required for test execution (`BASE_URL`, `ADMIN_USERNAME`, `ADMIN_PASSWORD`):
+1. Go to your GitHub Repository > **Settings**.
+2. On the left sidebar, go to **Security** > **Secrets and variables** > **Actions**.
+3. Under the **Secrets** tab, click **New repository secret** to add sensitive variables (recommended for credentials):
+   - **Name**: `ADMIN_USERNAME`, **Value**: *[your admin email]*
+   - **Name**: `ADMIN_PASSWORD`, **Value**: *[your admin password]*
+4. If you want to configure non-sensitive variables (like `BASE_URL`), you can either add them as secrets or switch to the **Variables** tab and click **New repository variable**:
+   - **Name**: `BASE_URL`, **Value**: `https://opensource-demo.orangehrmlive.com`
+
 ## Project Structure
 - `src/pages/` - Page Object classes encapsulating locators and actions.
 - `src/fixtures/` - Custom Playwright fixtures (includes auto-fixture to capture screenshot on test success).
